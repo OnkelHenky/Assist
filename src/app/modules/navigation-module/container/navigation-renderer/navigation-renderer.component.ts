@@ -10,8 +10,12 @@ import { RouterModule, Routes, Resolve, Router, NavigationEnd, NavigationStart} 
 export class NavigationRendererComponent implements OnInit {
 
   @Output()
-   navbarClicked: EventEmitter<boolean> = new EventEmitter<boolean>();
+  navbarClicked: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+  /**
+   * Navigation entries for fav menu items
+   * TODO: Move details to proper interface implementation
+   */
   fav_navigation = [
     {
       link: '/',
@@ -27,6 +31,10 @@ export class NavigationRendererComponent implements OnInit {
     }
   ];
 
+  /**
+   * Navigation entries for all other menu entries
+   * TODO: Move details to proper interface implementation
+   */
   navigation = [
     {
       link: '/competitions',
@@ -49,8 +57,7 @@ export class NavigationRendererComponent implements OnInit {
   ];
 
   constructor(private router: Router) {
-    router.events
-      .subscribe((evt) => {
+    router.events.subscribe((evt) => {
         if (evt instanceof NavigationStart) {
           console.log("Route Change Start!");
         } else if (evt instanceof NavigationEnd) {
