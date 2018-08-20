@@ -1,0 +1,28 @@
+<mat-toolbar color="primary" class="toolbar">
+
+  <div fxShow="true" fxHide.gt-sm="true">
+    <button mat-icon-button (click)="sidenav.toggle()"> <mat-icon>menu</mat-icon></button>
+  </div>
+
+  <div [ngClass.xs]="'appname_small_screen'">
+    <span>Assist</span>
+  </div>
+
+  <span class="example-spacer"></span>
+
+  <!-- div fxShow="true" fxHide.lt-md="true">
+  <a href="#" mat-button>Menu Item 1</a>
+
+  <a href="#" mat-button>Menu Item 2</a>
+
+  <a href="#" mat-button>Menu Item 3</a>
+
+  <a href="#" mat-button>Menu Item 4</a>
+
+  <a href="#" mat-button>Menu Item 5</a>
+
+  <a href="#" mat-button>Menu Item 6</a>
+
+  </div-->
+
+</mat-toolbar>
