@@ -1,8 +1,8 @@
-import { Component, OnDestroy,ViewChild,ElementRef} from '@angular/core';
+import { Component, OnDestroy,ViewChild} from '@angular/core';
 
 import { ObservableMedia, MediaChange } from '@angular/flex-layout';
 import { Subscription } from 'rxjs';
-import {MatSidenav} from '@angular/material';
+import { MatSidenav } from '@angular/material';
 
 @Component({
   selector: 'app-root',

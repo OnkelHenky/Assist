@@ -15,17 +15,19 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import  { NavigationModule } from './modules/navigation-module/navigation.module';
 import { CompetitionsModule} from './modules/competitions-module/competitions.module';
 import { TeamsModule } from './modules/teams-module/teams.module';
+import { NotFoundComponent } from './not-found.component';
 
 const routes: Routes = [
   //{path: '/', component:  , pathMatch: 'full'},
   //{path: '', redirectTo: 'passengers', pathMatch: 'full'}, //Redirecting eine "leere" URL ('/') auf '/passengers'
-//  {path: '**', component: NotFoundComponent, pathMatch: 'full'} //Wildcard match '**' für 404!
+   {path: '**', component: NotFoundComponent, pathMatch: 'full'} //Wildcard match '**' für 404!
 ];
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NotFoundComponent
   ],
   imports: [
     // Angular modules
