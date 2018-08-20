@@ -9,10 +9,17 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CompetitionsDashboardComponent} from '../competitions-module/container/competitions-dashboard/competitions-dashboard.component';
-import { CompetitionsDashboardViewComponent } from '../competitions-module/components/competitions-dashboard-view/competitions-dashboard-view.component';
+import { TeamsDeashboardComponent } from '../teams-module/container/teams-deashboard/teams-deashboard.component';
+import {TeamViewerComponent} from '../teams-module/components/team-viewer/team-viewer.component';
 
 const routes: Routes = [
     {path: 'competitions', component: CompetitionsDashboardComponent, pathMatch: 'full'},
+    {path: 'teams',
+      children: [
+        { path: '', component: TeamsDeashboardComponent},
+        { path: ':id', component: TeamViewerComponent}
+      ]}
+   // {path: 'team', component: TeamViewerComponent, pathMatch: 'full'},
   //{path: '', redirectTo: 'passengers', pathMatch: 'full'}, //Redirecting eine "leere" URL ('/') auf '/passengers'
 //  {path: '**', component: NotFoundComponent, pathMatch: 'full'} //Wildcard match '**' für 404!
 ];
@@ -30,9 +37,7 @@ const routes: Routes = [
     NavigationRendererComponent
   ],
   declarations: [
-    NavigationRendererComponent,
-    CompetitionsDashboardComponent,
-    CompetitionsDashboardViewComponent
+    NavigationRendererComponent
   ]
 })
 export class NavigationModule { }

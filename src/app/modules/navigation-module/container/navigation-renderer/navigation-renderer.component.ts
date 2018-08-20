@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { RouterModule, Routes, Resolve, Router, NavigationEnd, NavigationStart} from '@angular/router';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {  Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-navigation-renderer',
@@ -18,13 +18,13 @@ export class NavigationRendererComponent implements OnInit {
    */
   fav_navigation = [
     {
-      link: '/',
+      link: '/teams',
       name: 'My Teams',
       icon: 'group',
       exact: true
     },
     {
-      link: '/',
+      link: '/my_competitions',
       name: 'My Competitions',
       icon: 'view_list',
       exact: true
@@ -43,13 +43,13 @@ export class NavigationRendererComponent implements OnInit {
       exact: true
     },
     {
-      link: '/passengers',
+      link: '/games',
       name: 'Games',
       icon: '',
       exact: true
     },
     {
-      link: '/passengers',
+      link: '/tickets',
       name: 'Tickets',
       icon: '',
       exact: true
@@ -58,10 +58,7 @@ export class NavigationRendererComponent implements OnInit {
 
   constructor(private router: Router) {
     router.events.subscribe((evt) => {
-        if (evt instanceof NavigationStart) {
-          console.log("Route Change Start!");
-        } else if (evt instanceof NavigationEnd) {
-          console.log("Route Change End!");
+       if (evt instanceof NavigationEnd) {
           this.navbarClicked.emit(true);
         }
       });

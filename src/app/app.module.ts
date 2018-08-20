@@ -14,6 +14,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 // Custom app modules
 import  { NavigationModule } from './modules/navigation-module/navigation.module';
 import { CompetitionsModule} from './modules/competitions-module/competitions.module';
+import { TeamsModule } from './modules/teams-module/teams.module';
 
 const routes: Routes = [
   //{path: '/', component:  , pathMatch: 'full'},
@@ -36,7 +37,8 @@ const routes: Routes = [
 
     // Custom app modules
     NavigationModule,
-    CompetitionsModule
+    CompetitionsModule,
+    TeamsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
