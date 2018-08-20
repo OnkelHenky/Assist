@@ -1,0 +1,26 @@
+<nav  fxLayout="column"  fxLayoutAlign="space-around stretch" class="nav">
+  <div id="fav_navigation" fxLayout="column"  fxLayoutAlign="space-around stretch">
+    <a mat-button
+      *ngFor="let navEntry of fav_navigation"
+      [routerLink]="navEntry.link"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact : navEntry.exact}">
+      <div fxLayout="column" fxLayoutAlign="space-around center">
+        <mat-icon *ngIf="navEntry.icon">{{navEntry.icon}}</mat-icon>
+        {{navEntry.name}}
+      </div>
+    </a>
+  </div>
+  <div  id="navigation" fxLayout="column"  fxLayoutAlign="space-around stretch">
+  <a mat-button
+     *ngFor="let navEntry of navigation"
+     [routerLink]="navEntry.link"
+     routerLinkActive="active"
+     [routerLinkActiveOptions]="{exact : navEntry.exact}">
+    <div fxLayout="column" fxLayoutAlign="space-around center">
+      <mat-icon *ngIf="navEntry.icon">{{navEntry.icon}}</mat-icon>
+      {{navEntry.name}}
+    </div>
+  </a>
+  </div>
+</nav>

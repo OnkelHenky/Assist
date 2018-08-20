@@ -1,0 +1,28 @@
+
+/**
+  * Styles for the navigation
+  */
+
+.toolbar{
+  border-bottom: 1px solid #fffefd;
+}
+
+.sideNav{
+  background: #3f51b5;
+  color: white;
+}
+
+.sideNav #title{
+  font: 500 20px/32px Roboto,"Helvetica Neue",sans-serif;
+  margin: 0;
+}
+
+.breadcrumpmenu{
+  color: rgba(0,0,0,.54);
+  background: rgba(0,0,0,.03);
+
+ height: 2em;
+ width: 100%;
+}
+
+

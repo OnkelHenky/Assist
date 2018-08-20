@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 
@@ -9,7 +12,15 @@ import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 // Custom app modules
-import  { HeadernavModule } from './modules/headernav-module/headernav.module';
+import  { NavigationModule } from './modules/navigation-module/navigation.module';
+import { CompetitionsModule} from './modules/competitions-module/competitions.module';
+
+const routes: Routes = [
+  //{path: '/', component:  , pathMatch: 'full'},
+  //{path: '', redirectTo: 'passengers', pathMatch: 'full'}, //Redirecting eine "leere" URL ('/') auf '/passengers'
+//  {path: '**', component: NotFoundComponent, pathMatch: 'full'} //Wildcard match '**' für 404!
+];
+
 
 @NgModule({
   declarations: [
@@ -18,11 +29,14 @@ import  { HeadernavModule } from './modules/headernav-module/headernav.module';
   imports: [
     // Angular modules
     BrowserModule,
+    RouterModule.forRoot(routes, {useHash: true}),
     MaterialModule,
     FlexLayoutModule,
+    BrowserAnimationsModule,
 
     // Custom app modules
-    HeadernavModule
+    NavigationModule,
+    CompetitionsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

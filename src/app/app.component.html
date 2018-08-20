@@ -1,5 +1,39 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div>
-  <app-headernav></app-headernav>
-</div>
+<!--
+    Toolbar at the to of the application.
+    Only visible on small devices to provide a container for the button to toggle the show menu button
+ -->
+<mat-toolbar *ngIf="isSmallDevice" color="primary" class="toolbar">
+  <div>
+    <button mat-icon-button (click)="sidenav.toggle()"> <mat-icon>menu</mat-icon></button>
+  </div>
+  <div>
+    <span>{{title}}</span>
+  </div>
+</mat-toolbar>
 
+<!--
+    Main navigation as sidebar.
+    Closed if the application is running on a deice with a small screen.
+ -->
+<mat-sidenav-container  fxFlexFill>
+
+  <mat-sidenav class="sideNav" #sidenav  [(mode)]="over" [(opened)]="opened" fxLayout="column" >
+    <div *ngIf="!isSmallDevice" id="title" fxLayoutAlign="space-around stretch">
+      <span>{{title}}</span>
+    </div>
+    <app-navigation-renderer (navbarClicked)="handleSideNavToggle()"></app-navigation-renderer>
+  </mat-sidenav>
+
+  <!--
+  Main Content & breadcrumb navigation
+ -->
+  <mat-sidenav-content fxFlexFill>
+    <nav class="breadcrumpmenu">
+         BREADECRUMPS
+    </nav>
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
