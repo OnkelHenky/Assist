@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router, ActivatedRoute, Params } from '@angular/router'
 
 @Component({
   selector: 'app-team-viewer',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamViewerComponent implements OnInit {
 
-  constructor() { }
+  team_id: number;
 
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
+
+  /**
+   * TODO: Add type/safty check for URL Parameter
+   */
   ngOnInit() {
+    this.route.params
+      .subscribe((data : any) => {
+        console.log('data', data);
+        this.team_id = data.id;
+      });
+
   }
 
 }
