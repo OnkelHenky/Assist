@@ -19,9 +19,6 @@ const routes: Routes = [
         { path: '', component: TeamsDeashboardComponent},
         { path: ':id', component: TeamViewerComponent}
       ]}
-   // {path: 'team', component: TeamViewerComponent, pathMatch: 'full'},
-  //{path: '', redirectTo: 'passengers', pathMatch: 'full'}, //Redirecting eine "leere" URL ('/') auf '/passengers'
-//  {path: '**', component: NotFoundComponent, pathMatch: 'full'} //Wildcard match '**' für 404!
 ];
 
 @NgModule({

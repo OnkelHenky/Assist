@@ -19,8 +19,7 @@ import { NotFoundComponent } from './not-found.component';
 
 const routes: Routes = [
   //{path: '/', component:  , pathMatch: 'full'},
-  //{path: '', redirectTo: 'passengers', pathMatch: 'full'}, //Redirecting eine "leere" URL ('/') auf '/passengers'
-   {path: '**', component: NotFoundComponent, pathMatch: 'full'} //Wildcard match '**' für 404!
+   {path: '**', component: NotFoundComponent, pathMatch: 'full'} //Wildcard match 
 ];
 
 
