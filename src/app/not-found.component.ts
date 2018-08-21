@@ -9,8 +9,8 @@ import { Component} from '@angular/core';
     <section>
        <div>
         This is not the data you are looking for.
-        Catch all unimplemented routs ... for Testing only 
-        <a routerLink="/">Got back home </a>
+        Catch all unimplemented routes ... for testing only 
+        <a routerLink="/">Got back home</a>
        </div>
     </section>
   `

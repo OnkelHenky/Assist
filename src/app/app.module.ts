@@ -19,7 +19,7 @@ import { NotFoundComponent } from './not-found.component';
 
 const routes: Routes = [
   //{path: '/', component:  , pathMatch: 'full'},
-   {path: '**', component: NotFoundComponent, pathMatch: 'full'} //Wildcard match 
+   {path: '**', component: NotFoundComponent, pathMatch: 'full'} //Wildcard match
 ];
 
 
