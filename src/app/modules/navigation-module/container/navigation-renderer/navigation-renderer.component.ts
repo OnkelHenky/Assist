@@ -56,12 +56,8 @@ export class NavigationRendererComponent implements OnInit, OnDestroy {
     }
   ];
 
-  constructor(private router: Router) {
-    router.events.subscribe((evt) => {
-       if (evt instanceof NavigationEnd) {
-          this.navbarClicked.emit(true);
-        }
-      });
+  constructor() {
+
   }
 
   ngOnInit() {

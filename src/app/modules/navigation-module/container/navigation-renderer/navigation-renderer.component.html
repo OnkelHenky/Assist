@@ -4,7 +4,8 @@
       *ngFor="let navEntry of fav_navigation"
       [routerLink]="navEntry.link"
       routerLinkActive="active"
-      [routerLinkActiveOptions]="{exact : navEntry.exact}">
+      [routerLinkActiveOptions]="{exact : navEntry.exact}"
+      (click)="(navbarClicked.emit(true))">
       <div fxLayout="column" fxLayoutAlign="space-around center">
         <mat-icon *ngIf="navEntry.icon">{{navEntry.icon}}</mat-icon>
         {{navEntry.name}}
@@ -16,7 +17,8 @@
      *ngFor="let navEntry of navigation"
      [routerLink]="navEntry.link"
      routerLinkActive="active"
-     [routerLinkActiveOptions]="{exact : navEntry.exact}">
+     [routerLinkActiveOptions]="{exact : navEntry.exact}"
+     (click)="(navbarClicked.emit(true))">
     <div fxLayout="column" fxLayoutAlign="space-around center">
       <mat-icon *ngIf="navEntry.icon">{{navEntry.icon}}</mat-icon>
       {{navEntry.name}}
