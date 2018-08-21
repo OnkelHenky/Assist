@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import {  Router, NavigationEnd } from '@angular/router';
 
 @Component({
@@ -7,7 +7,7 @@ import {  Router, NavigationEnd } from '@angular/router';
   styleUrls: ['./navigation-renderer.component.css']
 })
 
-export class NavigationRendererComponent implements OnInit {
+export class NavigationRendererComponent implements OnInit, OnDestroy {
 
   @Output()
   navbarClicked: EventEmitter<boolean> = new EventEmitter<boolean>();
@@ -24,7 +24,7 @@ export class NavigationRendererComponent implements OnInit {
       exact: true
     },
     {
-      link: '/my_competitions',
+      link: '/mycompetitions',
       name: 'My Competitions',
       icon: 'view_list',
       exact: true
@@ -65,6 +65,10 @@ export class NavigationRendererComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ngOnDestroy(){
+
   }
 
 }

@@ -1,8 +1,12 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute, Params } from '@angular/router'
 import {Observable} from 'rxjs';
-import {map } from 'rxjs/operators';
+import {map, tap} from 'rxjs/operators';
 
+/*
+ * For testing only
+ * TODO: Move to dedicated file.
+ */
 interface Team {
   name: string;
   id: number
@@ -14,7 +18,7 @@ interface Team {
   templateUrl: './team-viewer.component.html',
   styleUrls: ['./team-viewer.component.css']
 })
-export class TeamViewerComponent implements OnInit, OnDestroy {
+export class TeamViewerComponent implements OnInit {
 
   params$: Observable<Team>; //Team-Observable, used in the HTML template with async pipe
 
@@ -23,9 +27,7 @@ export class TeamViewerComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute
   ) { }
 
-  /**
-   * TODO: Add type/safety check for URL Parameter
-   */
+
   ngOnInit() {
    this.params$ = this.route.params
      .pipe(
@@ -38,7 +40,4 @@ export class TeamViewerComponent implements OnInit, OnDestroy {
      );
   }
 
-  ngOnDestroy(){
-    //this.foo.unsubscribe();
-  }
 }
