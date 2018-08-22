@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CompetitionsDashboardComponent} from '../competitions-module/container/competitions-dashboard/competitions-dashboard.component';
 import { TeamsDeashboardComponent } from '../teams-module/container/teams-deashboard/teams-deashboard.component';
-import { TeamViewerComponent } from '../teams-module/components/team-viewer/team-viewer.component';
+import { TeamViewerComponent } from '../teams-module/container/team-viewer/team-viewer.component';
 import { BreadcrumbRendererComponent } from './container/breadcrumb-renderer/breadcrumb-renderer.component';
 import { BreadcrumbViewComponent } from './component/breadcrumb-view/breadcrumb-view.component';
 import { TicketDashboardComponent } from '../ticket-module/container/ticket-dashboard/ticket-dashboard.component';
