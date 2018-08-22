@@ -12,19 +12,19 @@ import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 // Custom  modules
-import  { NavigationModule } from './modules/navigation-module/navigation.module';
-import { CompetitionsModule} from './modules/competitions-module/competitions.module';
+import { NavigationModule } from './modules/navigation-module/navigation.module';
+import { CompetitionsModule } from './modules/competitions-module/competitions.module';
 import { TeamsModule } from './modules/teams-module/teams.module';
 import { TicketsModule } from './modules/ticket-module/tickets.module';
 import { GamesModule } from './modules/games-module/games.module';
-import {MyCompetitionsModule} from './modules/my-competitions-module/my-competitions.module';
+import { MyCompetitionsModule } from './modules/my-competitions-module/my-competitions.module';
 
 // Custom components
 import { NotFoundComponent } from './not-found.component';
 
 const routes: Routes = [
   //{path: '/', component:  , pathMatch: 'full'},
-   {path: '**', component: NotFoundComponent, pathMatch: 'full', data: {'breadcrumb': 'wildcard'}} //Wildcard match
+   {path: '**', component: NotFoundComponent, pathMatch: 'full', data: {breadcrumb: 'wildcard'}} //Wildcard match
 ];
 
 
