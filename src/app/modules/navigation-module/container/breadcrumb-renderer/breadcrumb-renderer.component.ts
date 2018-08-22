@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {  Router, NavigationEnd, ActivatedRoute,RoutesRecognized } from '@angular/router';
+import {  Router, NavigationEnd, ActivatedRoute,RoutesRecognized,ActivationEnd } from '@angular/router';
 import {map, tap} from 'rxjs/operators';
 
 import {Breadcrumb} from '../../../../models/breadcrumb';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-breadcrumb-renderer',
@@ -11,27 +12,17 @@ import {Breadcrumb} from '../../../../models/breadcrumb';
 })
 export class BreadcrumbRendererComponent implements OnInit {
 
+ // breadcrumbs$: Observable<Breadcrumb[]>;
+  routerEvents$: Observable<any>;
   breadcrumbs: Breadcrumb[];
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute ) { }
+  constructor(
+  private activatedRoute: ActivatedRoute
+  , private router: Router) { }
 
   ngOnInit() {
-   this.router.events
-      .pipe(
-        tap((event) => {
-          if(event instanceof NavigationEnd){
-          //  console.log('event: ', event)
-          }
-          return event;
-        }),
-        tap((event) => {
-          if (event instanceof RoutesRecognized) {
-           // console.log('event  ',  event);
-           // console.log('event route: ',  event.state.root.firstChild.data)
-          //  this.routeData = data.state.root.firstChild.data;
-          }
-        })
-      )//.subscribe();
-  }
+    this.breadcrumbs = [{label: "foo", url:"fooURL"},{label: "bar", url:"barURl"},{label: "baz", url:"bazURl"}] ;
+  // this.breadcrumbs$ = this.breadcrumbService.currentbreadCrumbs;
 
+  }
 }

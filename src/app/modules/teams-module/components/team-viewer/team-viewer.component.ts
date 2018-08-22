@@ -27,7 +27,9 @@ export class TeamViewerComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
-
+  /*
+   * Using some dummy data to test the component
+   */
   ngOnInit() {
    this.params$ = this.route.params
      .pipe(

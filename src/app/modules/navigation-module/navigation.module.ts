@@ -14,8 +14,8 @@ import { TeamViewerComponent } from '../teams-module/components/team-viewer/team
 import { BreadcrumbRendererComponent } from './container/breadcrumb-renderer/breadcrumb-renderer.component';
 import { BreadcrumbViewComponent } from './component/breadcrumb-view/breadcrumb-view.component';
 import { TicketDashboardComponent } from '../ticket-module/container/ticket-dashboard/ticket-dashboard.component';
-import {GamesDashboardComponent} from '../games-module/container/games-dashboard/games-dashboard.component';
-import {MyCompetitionDashboardComponent} from '../my-competitions-module/container/my-competition-dashboard/my-competition-dashboard.component';
+import { GamesDashboardComponent } from '../games-module/container/games-dashboard/games-dashboard.component';
+import { MyCompetitionDashboardComponent } from '../my-competitions-module/container/my-competition-dashboard/my-competition-dashboard.component';
 
 
 const routes: Routes = [

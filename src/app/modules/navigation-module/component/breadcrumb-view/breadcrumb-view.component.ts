@@ -14,6 +14,7 @@ export class BreadcrumbViewComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
