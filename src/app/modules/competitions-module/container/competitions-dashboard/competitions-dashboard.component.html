@@ -13,44 +13,10 @@
    <div [ngClass]="{
   'grid-container':  !device_has_sm,
   'grid-container_sm': device_has_sm}">
-    <mat-grid-list #grid >
+    <mat-grid-list #grid *ngFor=" let competition of (competitions$ | async )">
       <mat-grid-tile>
-        <app-competitions-dashboard-view></app-competitions-dashboard-view>
+        <app-competitions-dashboard-view [competition]="competition"></app-competitions-dashboard-view>
       </mat-grid-tile>
-      <mat-grid-tile>
-        <app-competitions-dashboard-view></app-competitions-dashboard-view>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <app-competitions-dashboard-view></app-competitions-dashboard-view>
-      </mat-grid-tile>
-      <mat-grid-tile>
-      <app-competitions-dashboard-view></app-competitions-dashboard-view>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <app-competitions-dashboard-view></app-competitions-dashboard-view>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <app-competitions-dashboard-view></app-competitions-dashboard-view>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <app-competitions-dashboard-view></app-competitions-dashboard-view>
-      </mat-grid-tile>   <mat-grid-tile>
-      <app-competitions-dashboard-view></app-competitions-dashboard-view>
-    </mat-grid-tile>   <mat-grid-tile>
-      <app-competitions-dashboard-view></app-competitions-dashboard-view>
-    </mat-grid-tile>   <mat-grid-tile>
-      <app-competitions-dashboard-view></app-competitions-dashboard-view>
-    </mat-grid-tile>   <mat-grid-tile>
-      <app-competitions-dashboard-view></app-competitions-dashboard-view>
-    </mat-grid-tile>   <mat-grid-tile>
-      <app-competitions-dashboard-view></app-competitions-dashboard-view>
-    </mat-grid-tile>   <mat-grid-tile>
-      <app-competitions-dashboard-view></app-competitions-dashboard-view>
-    </mat-grid-tile>   <mat-grid-tile>
-      <app-competitions-dashboard-view></app-competitions-dashboard-view>
-    </mat-grid-tile>
-
-
     </mat-grid-list>
    </div>
 </section>

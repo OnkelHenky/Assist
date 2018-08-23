@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Competition} from '../../models/competition.interface';
 
 @Component({
   selector: 'app-competitions-dashboard-view',
@@ -8,7 +9,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class CompetitionsDashboardViewComponent implements OnInit {
 
   @Input()
-  competition: any; //any for know make proper Competition interface
+  competition: Competition; //any for know make proper Competition interface
 
   constructor() { }
 

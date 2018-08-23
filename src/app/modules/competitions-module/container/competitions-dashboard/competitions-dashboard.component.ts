@@ -5,6 +5,7 @@ import {Observable} from 'rxjs';
 import {map, startWith, takeWhile} from 'rxjs/operators';
 import {CompetitionDashboardService} from '../../competition-dashboard.service';
 import {MatGridList} from '@angular/material';
+import {Competition} from '../../models/competition.interface';
 
 @Component({
   selector: 'app-competitions-dashboard',
@@ -15,6 +16,8 @@ export class CompetitionsDashboardComponent implements OnInit, AfterContentInit,
 
   title: string = "Competitions";
   public cols: Observable<number>;
+  competitions$: Observable<Competition[]>;
+  competitions: Competition[];
   mq: string;
   mq_alias: string;
   device_has_sm: boolean;
@@ -25,9 +28,25 @@ export class CompetitionsDashboardComponent implements OnInit, AfterContentInit,
               private compService: CompetitionDashboardService) { }
 
   ngOnInit() {
+    this.competitions$ = this.compService.getCompetitions();
     /*this.compService.getCompetitions().subscribe((data) => {
       console.log('data: ', data);
-    });*/
+    });
+    this.compService
+      .getCompetitions()
+      .subscribe((data: Competition[]) => {
+        console.log('data:',data);
+
+        this.competitions = data.filter((competition: Competition) => {
+          if (competition.plan === 'TIER_ONE') {
+            // competition.logo = this.getLogoLink(competition);
+            console.log(competition);
+          }
+          return competition.plan === 'TIER_ONE';
+        });
+      });
+      */
+
   }
 
   /*
