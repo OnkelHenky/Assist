@@ -1,1 +1,57 @@
-<app-competitions-dashboard-view></app-competitions-dashboard-view>
+<section fxFill class="competition_view">
+  <h2>{{title}}</h2>
+  <!-- div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutAlign="space-evenly stretch">
+    <app-competitions-dashboard-view></app-competitions-dashboard-view>
+    <app-competitions-dashboard-view></app-competitions-dashboard-view>
+    <app-competitions-dashboard-view></app-competitions-dashboard-view>
+    <app-competitions-dashboard-view></app-competitions-dashboard-view>
+    <app-competitions-dashboard-view></app-competitions-dashboard-view>
+  </div-->
+  <!-- span>{{mq}}</span>
+  <div>{{mq_alias}}</div -->
+    <!-- the dashboard to hold all available competitions -->
+   <div [ngClass]="{
+  'grid-container':  !device_has_sm,
+  'grid-container_sm': device_has_sm}">
+    <mat-grid-list #grid >
+      <mat-grid-tile>
+        <app-competitions-dashboard-view></app-competitions-dashboard-view>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <app-competitions-dashboard-view></app-competitions-dashboard-view>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <app-competitions-dashboard-view></app-competitions-dashboard-view>
+      </mat-grid-tile>
+      <mat-grid-tile>
+      <app-competitions-dashboard-view></app-competitions-dashboard-view>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <app-competitions-dashboard-view></app-competitions-dashboard-view>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <app-competitions-dashboard-view></app-competitions-dashboard-view>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <app-competitions-dashboard-view></app-competitions-dashboard-view>
+      </mat-grid-tile>   <mat-grid-tile>
+      <app-competitions-dashboard-view></app-competitions-dashboard-view>
+    </mat-grid-tile>   <mat-grid-tile>
+      <app-competitions-dashboard-view></app-competitions-dashboard-view>
+    </mat-grid-tile>   <mat-grid-tile>
+      <app-competitions-dashboard-view></app-competitions-dashboard-view>
+    </mat-grid-tile>   <mat-grid-tile>
+      <app-competitions-dashboard-view></app-competitions-dashboard-view>
+    </mat-grid-tile>   <mat-grid-tile>
+      <app-competitions-dashboard-view></app-competitions-dashboard-view>
+    </mat-grid-tile>   <mat-grid-tile>
+      <app-competitions-dashboard-view></app-competitions-dashboard-view>
+    </mat-grid-tile>   <mat-grid-tile>
+      <app-competitions-dashboard-view></app-competitions-dashboard-view>
+    </mat-grid-tile>
+
+
+    </mat-grid-list>
+   </div>
+</section>
+

@@ -1,0 +1,23 @@
+.competition_view{
+  background-color: white;
+}
+.grid-container{
+  width: 80%;
+  margin-left: 1em;
+  background-color: white;
+ /* margin: 0 auto;*/
+}
+
+.grid-container_sm{
+  width: 100%;
+  background-color: white;
+  margin: 0 auto;
+}
+
+mat-grid-list{
+  width: 100%;
+}
+mat-grid-tile{
+  /* background-color: #00A000; */
+ /* width: 20em !important; */
+}

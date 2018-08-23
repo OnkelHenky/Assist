@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-competitions-dashboard-view',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./competitions-dashboard-view.component.css']
 })
 export class CompetitionsDashboardViewComponent implements OnInit {
+
+  @Input()
+  competition: any; //any for know make proper Competition interface
 
   constructor() { }
 
