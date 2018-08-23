@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
-import {Competition} from './models/competition.interface';
+import {Competition, CompetitionsServerResponse} from './models/competition.interface';
 import {map} from 'rxjs/operators';
 
 // Key for the football.org api
@@ -24,7 +24,10 @@ export class CompetitionDashboardService {
         //console.dir(header)
         return this.http.get('/v2/competitions', { headers: this.header})
         .pipe(
-            map((response: Competition[]) => response)
+            map((response: CompetitionsServerResponse) => {
+                console.log('Response Competionisn Object', response);
+                return response.competitions
+            })
         )
     }
 }
