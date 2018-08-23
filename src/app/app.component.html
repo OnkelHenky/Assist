@@ -7,7 +7,7 @@
     <button mat-icon-button (click)="sidenav.toggle()"> <mat-icon>menu</mat-icon></button>
   </div>
   <div>
-    <span>{{title}}</span>
+    <span><h1>{{title}}</h1></span>
   </div>
 </mat-toolbar>
 
@@ -19,7 +19,7 @@
 
   <mat-sidenav class="sideNav" #sidenav  [(mode)]="over" [(opened)]="opened" fxLayout="column" >
     <div *ngIf="!isSmallDevice" id="title" fxLayoutAlign="space-around stretch">
-      <span>{{title}}</span>
+      <span><h1>{{title}}</h1></span>
     </div>
     <app-navigation-renderer (navbarClicked)="handleSideNavToggle()"></app-navigation-renderer>
   </mat-sidenav>
@@ -28,10 +28,10 @@
   Main Content & breadcrumb navigation
  -->
   <mat-sidenav-content fxFlexFill>
-    <nav class="breadcrumpmenu">
+    <!-- nav class="breadcrumpmenu">
       <app-breadcrumb-renderer></app-breadcrumb-renderer>
-    </nav>
-    <main>
+    </nav -->
+    <main fxFlexFill style="margin-top: -1em" >
         <router-outlet></router-outlet>
     </main>
   </mat-sidenav-content>
