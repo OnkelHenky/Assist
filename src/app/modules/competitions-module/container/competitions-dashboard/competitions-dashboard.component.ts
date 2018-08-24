@@ -28,35 +28,8 @@ export class CompetitionsDashboardComponent implements OnInit, AfterContentInit,
               private compService: CompetitionDashboardService) { }
 
   ngOnInit() {
-    this.competitions$ = this.compService.getCompetitions();
-    /*this.compService.getCompetitions().subscribe((data) => {
-      console.log('data: ', data);
-    });
-    this.compService
-      .getCompetitions()
-      .subscribe((data: Competition[]) => {
-        console.log('data:',data);
-
-        this.competitions = data.filter((competition: Competition) => {
-          if (competition.plan === 'TIER_ONE') {
-            // competition.logo = this.getLogoLink(competition);
-            console.log(competition);
-          }
-          return competition.plan === 'TIER_ONE';
-        });
-      });
-      */
-
+   this.competitions$ = this.compService.getCompetitions();
   }
-
-  /*
-  gridByBreakpoint = {
-    xl: 4,
-    lg: 4,
-    md: 3,
-    sm: 2,
-    xs: 1
-  };*/
 
   gridByBreakpoint = {
     xl: {
